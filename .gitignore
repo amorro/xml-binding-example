@@ -2,3 +2,4 @@
 /.idea
 /target
 *.log
+/js-sandbox/node_modules
