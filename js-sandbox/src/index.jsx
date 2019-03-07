@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BootstrapTable from 'bootstrap-react-table';
+import MyTableComponent from './component/MyTableComponent';
 
 const title = "Hi cosa";
 let myData = ["Pepito", "Joselito", "Juanito", "ito"];
@@ -58,7 +59,11 @@ ReactDOM.render(
             </tr>)}
             </tbody>
         </table>
-        <BootstrapTable columns={columns} data={data}/>
+        <BootstrapTable
+            columns={columns}
+            data={data}
+        />
+        <MyTableComponent/>
     </div>,
     document.getElementById('app')
 );
