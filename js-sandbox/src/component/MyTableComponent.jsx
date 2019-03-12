@@ -1,31 +1,33 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * MyTableComponent extiende el component
  */
 class MyTableComponent extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {columns: [
-            {
-                id: 'position',
-                name: '#'
-            },
-            {
-                id: 'name',
-                name: 'Name'
-            },
-            {
-                id: 'surname',
-                name: 'Surname'
-            }
+    constructor(props) {
+        super(props);
+        this.state = {
+            columns: [
+                {
+                    id: 'position',
+                    name: '#'
+                },
+                {
+                    id: 'name',
+                    name: 'Name'
+                },
+                {
+                    id: 'surname',
+                    name: 'Surname'
+                }
             ],
             data: [
-            {
-                position: 1,
-                name: 'Cosas',
-                quantity: 'Otras cosas'
-            }
+                {
+                    position: 1,
+                    name: 'Cosas',
+                    quantity: 'Otras cosas'
+                }
             ]
         };
     }
@@ -40,13 +42,26 @@ class MyTableComponent extends Component {
     render() {
         return (
             <div className="mt-element-ribbon bg-steel">
+                <h1>{this.props.title}</h1>
                 <table>
-                    for-each:columns
-                    for-each:data
+                    {this.props.data.map((i) =>
+                        <tr>
+                            <td> {i.name} </td>
+                            <td> {i.surname} </td>
+                        </tr>)}
                 </table>
+
             </div>
         );
     }
 }
+
+MyTableComponent.propTypes = {
+    data: PropTypes.array,
+    show: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
+    configOptions: PropTypes.object,
+    title: PropTypes.string
+};
 
 export default MyTableComponent;

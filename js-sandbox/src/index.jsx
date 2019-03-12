@@ -6,10 +6,10 @@ import MyTableComponent from './component/MyTableComponent';
 const title = "Hi cosa";
 let myData = ["Pepito", "Joselito", "Juanito", "ito"];
 let myComplexData = [
-    {name:"Pepito0", surname:"Palotes0"},
-    {name:"Pepito1", surname:"Palotes1"},
-    {name:"Pepito2", surname:"Palotes2"},
-    {name:"Pepito3", surname:"Palotes3"}];
+    {name: "Pepito0", surname: "Palotes0"},
+    {name: "Pepito1", surname: "Palotes1"},
+    {name: "Pepito2", surname: "Palotes2"},
+    {name: "Pepito3", surname: "Palotes3"}];
 
 const columns = [
     {
@@ -40,7 +40,7 @@ ReactDOM.render(
         <h1>{title}</h1>
         <ul>
             <li>yuhu</li>
-            {myData.map((v)=>
+            {myData.map((v) =>
                 <li>{v}</li>
             )}
         </ul>
@@ -53,17 +53,22 @@ ReactDOM.render(
             </thead>
             <tbody>
             {myComplexData.map((item) =>
-            <tr>
-                <td>{item.name}</td>
-                <td>{item.surname}</td>
-            </tr>)}
+                <tr>
+                    <td>{item.name}</td>
+                    <td>{item.surname}</td>
+                </tr>)}
             </tbody>
         </table>
         <BootstrapTable
             columns={columns}
             data={data}
         />
-        <MyTableComponent/>
+        <MyTableComponent
+            show={true}
+            title={'Tablita guapa'}
+            data={myComplexData}
+            onClick={alert('HOLA!')}
+        />
     </div>,
     document.getElementById('app')
 );
