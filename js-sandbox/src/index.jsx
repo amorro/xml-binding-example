@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import BootstrapTable from 'bootstrap-react-table';
 import MyTableComponent from './component/MyTableComponent';
+import MenuComponent from "./component/MenuComponent";
 
 const title = "Hi cosa";
 let myData = ["Pepito", "Joselito", "Juanito", "ito"];
@@ -68,6 +69,8 @@ ReactDOM.render(
             title={'Tablita guapa'}
             data={myComplexData}
             onClick={alert('HOLA!')}
+        />
+        <MenuComponent
         />
     </div>,
     document.getElementById('app')
