@@ -13,11 +13,16 @@ class DummyHeaderComponent extends Component {
         const myData = this.props.data;
         console.log(myData);
 
-        return <h1>
-            {this.props.data.map((o) =>
-                <a href={o.link}>{o.label}</a>
-            )}
+        return <header className="row"
+        <h1>
+
         </h1>
+        <div>
+            {this.props.data.map((o) =>
+                <a key={o.link}>{o.label}</a>
+            )}
+        </div>
+        </header>
     }
 }
 
